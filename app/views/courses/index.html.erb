@@ -1,0 +1,17 @@
+<h1>Courses</h1>
+
+<ul>
+    <% @courses.each do |course| %>
+        <li>
+            <h2><%= course.title %></h2>
+            <p><%= course.description %></p>
+            <p>Price: $<%= course.price %></p>
+
+            <% if user_signed_in? %>
+                <%= button_to 'Buy', course_buy_path(course), method: :post, params: { user_id: current_user.id }, data: { turbo: false } %>
+            <% else %>
+                <%= link_to 'Sign in to buy', new_user_session_path %>
+            <% end %>
+        </li>
+    <% end %>
+</ul>
