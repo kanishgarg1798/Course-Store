@@ -36,7 +36,6 @@ To integrate Stripe, set up your API keys in 'credentials.yml.enc' or environmen
 - STRIPE_WEBHOOK_SECRET
 
 - To listen for Stripe webhooks, run the following command:
-- ```bash
  stripe listen --forward-to localhost:3000/webhooks/stripe
 
 ## Testing
