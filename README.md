@@ -1,30 +1,44 @@
-# README
+# Course Store
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+A web app for users to browse and buy courses. Integrated with Stripe for payment processing and webhook support to handle payment updates.
 
-Things you may want to cover:
+## Features
+- Browse available courses
+- Purchase courses using Stripe
+- Webhook support to automatically update payment status
 
-* Ruby version
-3.0.0
-* System dependencies
+### Prerequisites
+- Ruby 3.0
+- Rails 7
+- PostgreSQL
+- Stripe account ( for payments )
 
-* Configuration
+## Getting Started
 
-* Database creation
-postgresql
-* Database initialization
+- Clone the repo:
+- git clone https://github.com/kanishgarg1798/course-store.git
+- cd course-store
 
-* How to run the test suite
-rails s
-stripe listen --forward-to localhost:3000/webhooks/stripe
+- Install the required gems:
+- bundle install
 
-* Services (job queues, cache servers, search engines, etc.)
+- rails db:create
+- rails db:migrate
 
-* Deployment instructions
+- Start the Rails server:
+- rails s
 
-* ...
+### Stripe Setup
 
-Command for listening the webhook events
+To integrate Stripe, set up your API keys in 'credentials.yml.enc' or environment variables:
 
-stripe listen --forward-to localhost:3000/webhooks/stripe
+- `STRIPE_API_KEY`
+- `STRIPE_WEBHOOK_SECRET`
+
+- To listen for Stripe webhooks, run the following command:
+- ```bash
+ stripe listen --forward-to localhost:3000/webhooks/stripe
+
+## Testing
+
+Use the Stripe test card number `4242 4242 4242 4242` with any valid expiration date and CVC to simulate purchases.
