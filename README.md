@@ -32,8 +32,8 @@ A web app for users to browse and buy courses. Integrated with Stripe for paymen
 
 To integrate Stripe, set up your API keys in 'credentials.yml.enc' or environment variables:
 
-- `STRIPE_API_KEY`
-- `STRIPE_WEBHOOK_SECRET`
+- STRIPE_API_KEY
+- STRIPE_WEBHOOK_SECRET
 
 - To listen for Stripe webhooks, run the following command:
 - ```bash
